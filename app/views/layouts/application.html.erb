@@ -24,18 +24,18 @@
             <% if user_signed_in? %>
 
             <li class="nav-item">
-              <%= link_to "Home", user_session_path, class: 'nav-link text-dark' %>
+              <%= link_to "Home", 'homes#top', class: 'nav-link text-dark' %>
             </li>
             <li class="nav-item">
               <%= link_to 'About', new_user_session_path, class: 'nav-link text-dark' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Sign up',new_user_session_path(current_user.id), class: 'nav-link text-dark' %>
+              <%= link_to 'Sign up',new_user_registration_path(current_user.id), class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-dark' %>
             </li>
             <% else %>
-            <li class="nav-item">
-              <%= link_to "Log in", new_user_registration_path, class: 'nav-link text-dark' %>
-            </li>
             <% end %>
             </ul>
           </div>
