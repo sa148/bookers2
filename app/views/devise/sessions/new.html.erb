@@ -17,9 +17,7 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
+<%= f.submit 'Log in', class: "btn btn-secondary" %>
 <% end %>
-<%= link_to 'Log in', books_path(user.id), class: "btn btn-secondary" %>
-
 <%= render "devise/shared/links" %>
 
-<p>CopyRight Infratop.inc</p>

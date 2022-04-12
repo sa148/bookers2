@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-　belongs_to :user
+  belongs_to :user
   has_one_attached :profile_image
 
   def get_profile_image

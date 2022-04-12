@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = Book.new(book_params)
+    @book = Book.new(book_params)
     @book.user_id =current_usre.id
     @book.save
     redirect_to book_path
@@ -17,10 +17,19 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @book = @user.books
+    @books = Book.all
+    @book = Book.new
   end
 
   def edit
   end
 
+  def destroy
+  end
+
+  private
+
+  def  user_params
+    params.require(:book).permit(:title, :opinion,)
+  end
 end
