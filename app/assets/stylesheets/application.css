@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.shadow-sm {
+  color: #343a40;
+}
+
+.btn btn-secondary {
+  color: green;
+}

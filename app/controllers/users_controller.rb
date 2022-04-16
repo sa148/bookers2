@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    redirect_to user_path(id: current_user)
   end
 
   def user_params
@@ -10,9 +11,8 @@ class UsersController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    @book.user_id =current_usre.id
+    @book.user_id = current_usre.id
     @book.save
-    redirect_to book_path(id: current_user)
   end
 
   def show
