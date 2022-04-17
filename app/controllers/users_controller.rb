@@ -6,12 +6,22 @@ class UsersController < ApplicationController
        redirect_to book_path(@book.id)
        flash[:alert] = "Welcome! You have signed up successfully."
     else
-      render :show
+       render :new
     end
   end
 
   def user_params
     params.require(:user).permit(:profile_image)
+  end
+
+  def login
+    @user = User.find_by(name: params[:name], password: params[:password])
+    if @user
+       flash[:alert] = "Signed in successfully."
+       redirect_to user_path(@user_id)
+    else
+       render :login
+    end
   end
 
   def create
@@ -50,9 +60,15 @@ class UsersController < ApplicationController
     book.destroy
   end
 
+  def logout
+    session[:user_id] = nil
+    flash[:alert] = "Signed out successfully."
+    redirect_to 'homes#top'
+  end
+
   private
 
   def  user_params
-    params.require(:book).permit(:title, :opinion,)
+    params.require(:user).permit(:name, :password)
   end
 end
