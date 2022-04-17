@@ -2,7 +2,12 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    redirect_to user_path(id: current_user)
+    if @user.save
+       redirect_to book_path(@book.id)
+       flash[:alert] = "Welcome! You have signed up successfully."
+    else
+      render :show
+    end
   end
 
   def user_params
@@ -26,9 +31,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    @book = Book.find(params[:id])
-    @book.update(book_params)
-    redirect_to  user_path(id: current_user)
+    @user = User.find(params[:id])
+    if  @user.update(usr_params)
+        redirect_to user_path(@user_id)
+        flash[:alert] = "You have updated user successfully."
+    else
+        render :edit
+    end
   end
 
   def index
