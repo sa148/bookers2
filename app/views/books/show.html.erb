@@ -1,9 +1,9 @@
 <h2>User info</h2>
-<table width="430">
+<table width="220">
   <tbody>
     <tr>
-      <th width="65%">name</th>
-      <th width="35%"><%= @user.name %></th>
+      <th width="30%">name</th>
+      <th width="30%"><%= @user.name %></th>
       <%= image_tag @user.get_profile_image(100,100) %>
     </tr>
     <tr>
@@ -28,7 +28,7 @@
   <%= f.label :opnion %><br>
   <%= f.text_area :Opnion %>
 </div>
-  <%= f.submit 'Create Book' %>
+  <%= f.submit 'Create Book', "btn btn-success" %>
 <% end %>
 <h2>Books detail</h2>
 <table class="table">
@@ -43,8 +43,8 @@
     <tr>
       <td><%=@book_mybook.title%></td>
       <td><%=@book_mybook.body%></td>
-      <td><%= link_to "edit", edit_book_path(@book_mybook.id)%></td>
-      <td><%= link_to "destroy", book_path(@book_mybook.id), method: :delete%></td>
+      <td><%= link_to "edit", edit_book_path(@book_mybook.id), class: "btn btn-success"%></td>
+      <td><%= link_to "destroy", book_path(@book_mybook.id), method: :delete, class="btn btn-danger"%></td>
     </tr>
   </tbody>
 </table>

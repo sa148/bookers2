@@ -20,10 +20,5 @@
   box-sizing: border-box;
 }
 
-.shadow-sm {
-  color: #343a40;
-}
-
-.btn btn-secondary {
-  color: green;
-}
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
