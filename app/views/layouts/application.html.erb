@@ -8,11 +8,12 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/18a0bab39d.js" crossorigin="anonymous"></script>
   </head>
 
   <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <span>Bookers</span>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,38 +23,46 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
              <li class="nav-item">
-              <%= link_to "Home", root_path, class: 'nav-link text-white' %>
-              <i class="fa fa-home"></i>
+              <%= link_to root_path, class: 'nav-link text-white' do%>
+              <i class="fa fa-home"></i>Home
+              <% end %>
             </li>
              <li class="nav-item">
-              <%= link_to "users", users_path, class: 'nav-link text-white' %>
-              <i class="fa fa-users"></i>
+              <%= link_to users_path, class: 'nav-link text-white' do%>
+              <i class="fa fa-users"></i>Users
+              <% end %>
             </li>
              <li class="nav-item">
-            <%= link_to "Books", books_path, class: 'nav-link text-white' %>
-              <i class="fa fa-book-open"></i>
+            <%= link_to books_path, class: 'nav-link text-white' do%>
+              <i class="fa fa-book-open"></i>Books
+              <% end %>
             </li>
             </li>
             <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
-              <i class="fas fa-sign-out-alt"></i>
+              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-white' do%>
+              <i class="fas fa-sign-out-alt"></i>Log out
+              <% end %>
             </li>
             <% else %>
             <li class="nav-item">
-              <%= link_to "Home", root_path, class: 'nav-link text-white' %>
-              <i class="fa fa-home"></i>
+             <%= link_to root_path, class: 'nav-link text-white' do%>
+              <i class="fa fa-home"></i>Home
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to 'About', about_path, class: 'nav-link text-white' %>
-              <i class="fa fa-link"></i>
+              <%= link_to about_path, class: 'nav-link text-white' do%>
+              <i class="fa fa-link"></i>About
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Sign up',new_user_registration_path, class: 'nav-link text-white' %>
-              <i class="fa fa-user-plus"></i>
+              <%= link_to new_user_registration_path, class: 'nav-link text-white' do%>
+              <i class="fa fa-user-plus"></i>Sign in
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white' %>
-              <i class="fa fa-right-from-bracket"></i>
+              <%= link_to new_user_session_path, class: 'nav-link text-white' do%>
+              <i class="fas fa-sign-in-alt"></i>Log in
+              <% end %>
             </li>
             <% end %>
             </ul>
@@ -62,7 +71,6 @@
       </nav>
     </header>
     <main class="mb-auto">
-      <%= flash[:alert]  %>
       <%= flash[:notice]  %>
     <%= yield %>
     </main>

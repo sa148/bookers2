@@ -14,8 +14,9 @@
     </tr>
    </tbody>
 </table>
-<%= link_to edit_user_path(@user_id) class="btn btn-outline-secondary btn-block" %>
+<%= link_to edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block" do %>
 <i class="fas fa-user-cog"></i>
+<% end %>
 <titile>New book</titile>
 
 <%= form_with model: @book do |f| %>
