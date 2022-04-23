@@ -1,3 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
 <h2>User info</h2>
 <% if @user.errors.any? %>
   <%= @user.errors.count %>errors prohibited this user from being saved:
@@ -19,4 +23,7 @@
   <%= f.text_area :email %>
 </div>
   <%= f.submit 'Update User', class: "btn btn-secondary" %>
+  </div>
+    </div>
+     </div>
 <% end %>

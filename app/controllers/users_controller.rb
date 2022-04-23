@@ -19,7 +19,7 @@ before_action :authenticate_user!
     @user = User.find_by(name: params[:name], password: params[:password])
     if @user
        flash[:notice] = "Signed in successfully."
-       redirect_to user_path(@user_id)
+       redirect_to user_path(@user.id)
     else
        render :login
     end

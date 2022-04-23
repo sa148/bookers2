@@ -1,3 +1,6 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
 <h2>User info</h2>
 <table width="430">
   <tbody>
@@ -7,9 +10,7 @@
       <%= image_tag current_user.get_profile_image(100,100) %>
     </tr>
     <tr>
-      <th>
-        introduction
-      </th>
+      <th>introduction</th>
       <th></th>
     </tr>
    </tbody>
@@ -17,7 +18,7 @@
 <%= link_to edit_user_path(current_user.id), class: "btn btn-outline-secondary btn-block" do %>
 <i class="fas fa-user-cog"></i>
 <% end %>
-<titile>New book</titile>
+<h2>New book</h2>
 
 <%= form_with model: @book do |f| %>
 <div class="field">
@@ -28,8 +29,9 @@
   <%= f.label :opnion %><br>
   <%= f.text_area :body %>
 </div>
-  <%= f.submit 'Create Book' %>
-<h2>Books</h2>
+  <%= f.submit 'Create Book', class: "btn btn-success" %>
+<h2>Users</h2>
+<div class="col-md-8 offset-md-1">
 <table class="table">
   <thead>
     <tr>
@@ -41,4 +43,8 @@
   <tbody>
   </tbody>
 </table>
+ </div>
+  </div>
+   </div>
+     </div>
 <% end %>
