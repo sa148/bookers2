@@ -43,7 +43,8 @@
   </thead>
   <tbody>
     <tr>
-      <td><%=@book_mybook.title%></td>
+      <td><%= image_tag @user.get_profile_image(100,100) %><%= link_to @user.name, user_path(@user.id)%></td>
+      <td><%= link_to @book_mybook.title, book_path(@book_mybook.id)%></td>
       <td><%=@book_mybook.body%></td>
       <td><%= link_to "edit", edit_book_path(@book_mybook.id), class: "btn btn-success"%></td>
       <% if @user == current_user %>
