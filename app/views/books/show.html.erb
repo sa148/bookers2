@@ -6,12 +6,12 @@
   <tbody>
     <tr>
       <th>name</th>
-      <th><%= @user.name %></th>
-      <%= image_tag @user.get_profile_image(100,100) %>
+      <th><%= @book_mybook.user.name %></th>
+      <%= image_tag @book_mybook.user.get_profile_image(100,100) %>
     </tr>
     <tr>
       <th>introduction</th>
-      <th><%= @user.introduction%></th>
+      <th><%= @book_mybook.user.introduction%></th>
     </tr>
    </tbody>
 </table>
@@ -37,19 +37,15 @@
 <div class="col-md-8 offset-md-1">
 <table class="table">
   <thead>
-    <tr>
-      <th>Title</th>
-      <th>Opinion</th>
-      <th colspan="3"></th>
-    </tr>
+    <tr></tr>
   </thead>
   <tbody>
     <tr>
-      <td><%= image_tag @user.get_profile_image(100,100) %><%= link_to @user.name, user_path(@user.id)%></td>
+      <td><%= image_tag @book_mybook.user.get_profile_image(100,100) %><%= link_to @book_mybook.user.name, user_path(@book_mybook.user.id)%></td>
       <td><%= link_to @book_mybook.title, book_path(@book_mybook.id)%></td>
       <td><%=@book_mybook.body%></td>
-      <td><%= link_to "Edit", edit_book_path(@book_mybook.id), class: "btn btn-success"%></td>
       <% if @user == current_user %>
+      <td><%= link_to "Edit", edit_book_path(@book_mybook.id), class: "btn btn-success"%></td>
       <td><%= link_to "Destroy", book_path(@book_mybook.id), class: "btn btn-sm btn-danger", method: :delete %></td>
       <% end %>
     </tr>
