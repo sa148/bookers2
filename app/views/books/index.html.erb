@@ -10,11 +10,11 @@
   </ul>
 <% end %>
 <h2>User info</h2>
-<table width="220">
+<table>
   <tbody>
     <tr>
-      <th width="65%">name</th>
-      <th width="35%"><%= @user.name %></th>
+      <th>name</th>
+      <th><%= @user.name %></th>
       <%= image_tag @user.get_profile_image(100,100) %>
     </tr>
     <tr>

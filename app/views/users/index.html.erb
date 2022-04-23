@@ -2,16 +2,16 @@
   <div class="row">
     <div class="col-md-3">
 <h2>User info</h2>
-<table width="430">
+<table>
   <tbody>
     <tr>
-      <th width="65%">name</th>
-      <th width="35%"><%= current_user.name %></th>
+      <th>name</th>
+      <th><%= current_user.name %></th>
       <%= image_tag current_user.get_profile_image(100,100) %>
     </tr>
     <tr>
       <th>introduction</th>
-      <th></th>
+      <th><%= current_user.introduction%></th>
     </tr>
    </tbody>
 </table>

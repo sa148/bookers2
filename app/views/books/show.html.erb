@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-3">
 <h2>User info</h2>
-<table width="220">
+<table>
   <tbody>
     <tr>
-      <th width="30%">name</th>
-      <th width="30%"><%= @user.name %></th>
+      <th>name</th>
+      <th><%= @user.name %></th>
       <%= image_tag @user.get_profile_image(100,100) %>
     </tr>
     <tr>
