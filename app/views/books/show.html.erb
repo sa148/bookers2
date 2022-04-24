@@ -15,7 +15,7 @@
     </tr>
    </tbody>
 </table>
-<%= link_to edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block" do %>
+<%= link_to edit_user_path(@book_mybook.user.id), class: "btn btn-outline-secondary btn-block" do %>
 <i class="fas fa-user-cog"></i>
 <% end %>
 <h2>New book</h2>
@@ -44,7 +44,7 @@
       <td><%= image_tag @book_mybook.user.get_profile_image(100,100) %><%= link_to @book_mybook.user.name, user_path(@book_mybook.user.id)%></td>
       <td><%= link_to @book_mybook.title, book_path(@book_mybook.id)%></td>
       <td><%=@book_mybook.body%></td>
-      <% if @user == current_user %>
+      <% if current_user.id == @book_mybook.user.id%>
       <td><%= link_to "Edit", edit_book_path(@book_mybook.id), class: "btn btn-success"%></td>
       <td><%= link_to "Destroy", book_path(@book_mybook.id), class: "btn btn-sm btn-danger", method: :delete %></td>
       <% end %>
